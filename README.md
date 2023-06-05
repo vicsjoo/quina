@@ -1,0 +1,2 @@
+# quina
+Gerar combinações quina
