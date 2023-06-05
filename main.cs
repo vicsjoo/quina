@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-    void gerar()
+    void quina()
     {
         int[] numbers = Enumerable.Range(1, 80).ToArray();
         int k = 5;
@@ -14,20 +14,15 @@ using System.Linq;
                            from n5 in numbers
                            where n1 < n2 && n2 < n3 && n3 < n4 && n4 < n5
                            select new { n1, n2, n3, n4, n5 };
-
-        using (StreamWriter writer = new StreamWriter("combinations.txt"))
+        using (StreamWriter writer = new StreamWriter("quina.txt")){
+          
+        
+        foreach (var combination in combinations.Take(24040016))
         {
-            int count = 0;
-            foreach (var combination in combinations)
-            {
-                string line = string.Join("-", new[] { combination.n1, combination.n2, combination.n3, combination.n4, combination.n5 }.Select(n => (n - 1).ToString("D2")));
-                writer.WriteLine(line);
-                count++;
-                if (count == 24040016)
-                {
-                    break;
-                }
-            }
+            string line = string.Join("-", new[] { combination.n1, combination.n2, combination.n3, combination.n4, combination.n5 }.Select(n => n.ToString("D2")));
+            writer.WriteLine(line);
         }
-}
-gerar();
+        break;
+        }
+    }
+quina();
