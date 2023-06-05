@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-    void main()
+    void gerar()
     {
         int[] numbers = Enumerable.Range(1, 80).ToArray();
         int k = 5;
@@ -30,4 +30,4 @@ using System.Linq;
             }
         }
 }
-main();
+gerar();
